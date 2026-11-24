@@ -27,6 +27,12 @@ public class Numbers16 {
             System.out.println(myNumbers.length);
             System.out.println(myNumbers[0].length);
 
+            // Pertanyaan Diskusi No. 1 : Salinan referensi
+            int[][] salinan = myNumbers;
+            salinan[0][0] = 99;
+            System.out.println(myNumbers[0][0]); // 99
+            
+
         }
     }
 }
