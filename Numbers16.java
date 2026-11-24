@@ -31,8 +31,23 @@ public class Numbers16 {
             int[][] salinan = myNumbers;
             salinan[0][0] = 99;
             System.out.println(myNumbers[0][0]); // 99
-            
 
+            // Pertanyaan Diskusi No. 2 : Deep copy
+            int[][] kl = myNumbers.clone();
+            kl[0][0] = 55;
+            System.out.println(myNumbers[0][0]); // 55, ikut berubah
+            // Salinan dengan deep copy
+            int[][] deep = new int[myNumbers.length][];
+            for (int k = 0; k < myNumbers.length; k++) {
+                deep[k] = Arrays.copyOf(myNumbers[k], myNumbers[k].length);
+            }
+            deep[0][0] = 5;
+            System.out.println(myNumbers[0][0]); // tetap 99 (tidak ikut berubah)
+
+            int[][] kloning = myNumbers.clone(); //shallow copy
+            kloning[0][0] = 77;
+            System.out.println(myNumbers[0][0]); // ikut berubah menjadi 77
         }
     }
 }
+
