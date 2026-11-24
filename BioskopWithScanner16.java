@@ -9,23 +9,26 @@ public class BioskopWithScanner16 {
         String[][] penonton = new String[4][2];
 
         while (true) {
-         System.out.print("Masukkan nama: ");
+            System.out.print("Masukkan nama: ");
             nama = sc.nextLine();
-            System.out.print("Masukkan baris: ");
-            baris = sc.nextInt();
-            System.out.print("Masukkan kolom: ");
-            kolom = sc.nextInt();
-            sc.nextLine();
 
-            if (baris < 1 || baris > penonton.length) {
-                System.out.println("Baris tidak tersedia. Pilih 1 sampai " + penonton.length);
-            } else if (kolom < 1 || kolom > penonton[baris - 1].length) {
-                System.out.println("Kolom tidak tersedia. Pilih 1 sampai " + penonton[baris - 1].length);
-            } else {
-                penonton[baris - 1][kolom - 1] = nama;
-                System.out.println("Data penonton tersimpan.");
+            while (true) {
+                System.out.print("Masukkan baris: ");
+                baris = sc.nextInt();
+                System.out.print("Masukkan kolom: ");
+                kolom = sc.nextInt();
+                sc.nextLine();
+
+                if (baris < 1 || baris > penonton.length || kolom < 1 || kolom > penonton[baris - 1].length) {
+                    System.out.println("Kursi tidak tersedia.");
+                } else if (penonton[baris - 1][kolom - 1] != null) {
+                    System.out.println(
+                            "Kursi sudah terisi oleh " + penonton[baris - 1][kolom - 1] + ". Pilih kursi lain.");
+                } else {
+                    break;
+                }
             }
-
+            penonton[baris - 1][kolom - 1] = nama;
             System.out.print("Input penonton lainnya? (y/n): ");
             pilihan = sc.nextLine();
 
@@ -34,4 +37,4 @@ public class BioskopWithScanner16 {
             }
         }
     }
-}   
+}
