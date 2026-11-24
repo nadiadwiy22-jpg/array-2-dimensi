@@ -9,7 +9,7 @@ public class Numbers16 {
 
         //Langkah 3 : Tampilkan isi setiap baris
         for (int i = 0; i < myNumbers.length; i++) {
-            System.out.println(Arrays.toString(myNumbers));
+            System.out.println(Arrays.deepToString(myNumbers));
         }
     }
 }
