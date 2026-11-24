@@ -19,9 +19,14 @@ public class Numbers16 {
             // System.out.println(Arrays.deepToString(myNumbers));
 
             // No.5
-                System.out.println("Panjang baris ke-" + (i + 1) + ": " +
-                        myNumbers[i].length);
-            }
+            System.out.println("Panjang baris ke-" + (i + 1) + ": " +
+                    myNumbers[i].length);
+
+            // No.7 : Mengganti baris 0 dengan array baru
+            myNumbers[0] = new int[7];
+            System.out.println(myNumbers.length);
+            System.out.println(myNumbers[0].length);
+
         }
     }
-
+}
