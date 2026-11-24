@@ -3,7 +3,13 @@ import java.util.Scanner;
 public class SIAKAD16 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int[][] nilai = new int[4][3];
+
+        System.out.print("Jumlah mahasiswa: ");
+        int jumlahMahasiswa = sc.nextInt();
+        System.out.print("Jumlah mata kuliah: ");
+        int jumlahMataKuliah = sc.nextInt();
+        
+        int[][] nilai = new int[jumlahMahasiswa][jumlahMataKuliah];
 
         //Langkah 3 : Input nilai dengan Scanner dan nested loop
         for (int i = 0; i < nilai.length; i++) {
